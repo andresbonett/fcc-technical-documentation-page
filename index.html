@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Flexbox - Documentación tecnica en Español</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Menu -->
+    <label for="menu-toggle">
+      <div class="botonMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </label>
+    <input type="checkbox" id="menu-toggle" />
+
+    <nav id="navbar">
+      <header>CSS Flexbox - Documentación tecnica en Español</header>
+      <a href="#Introducción" class="nav-link">Introducción</a>
+      <a href="#display-flex" class="nav-link">display-flex</a>
+      <a href="#flex-direction" class="nav-link">flex-direction</a>
+      <a href="#justify-content" class="nav-link">justify-content</a>
+      <a href="#align-items" class="nav-link">align-items</a>
+      <a href="#flex-wrap" class="nav-link">flex-wrap</a>
+      <a href="#flex-shrink" class="nav-link">flex-shrink</a>
+      <a href="#flex-grow" class="nav-link">flex-grow</a>
+      <a href="#flex-basis" class="nav-link">flex-basis</a>
+      <a href="#flex" class="nav-link">flex</a>
+      <a href="#order" class="nav-link">order</a>
+      <a href="#align-self" class="nav-link">align-self</a>
+      <footer>Coded by @andresbonettm</footer>
+    </nav>
+
+    <main id="main-doc">
+      <h1>CSS Flexbox - Documentación tecnica en Español</h1>
+      <section class="main-section" id="Introducción">
+        <header>Introducción</header>
+        <p>
+          En <code>CSS Flexbox</code> La interfaz de usuario ("UI") de un sitio
+          web tiene dos componentes. Primero, están los elementos visuales, como
+          colores, fuentes e imágenes. En segundo lugar, está la colocación o el
+          posicionamiento de esos elementos. En Responsive Web Design, un diseño
+          de interfaz de usuario debe acomodar muchos navegadores y dispositivos
+          diferentes que acceden al contenido. CSS3 introdujo cajas flexibles, o
+          flexbox, para crear diseños de página para una interfaz de usuario
+          dinámica. Es un modo de diseño que organiza los elementos de manera
+          predecible para diferentes tamaños de pantalla y navegadores. Si bien
+          son algo nuevos, todos los navegadores modernos populares admiten
+          flexbox. Esta sección cubre cómo usar flexbox y las diferentes
+          opciones de diseño que ofrece.
+        </p>
+      </section>
+
+      <section class="main-section" id="display-flex">
+        <header>display-flex</header>
+        <p>
+          Colocar la propiedad de CSS <code>display: flex;</code> en un elemento
+          le permite usar otras propiedades flexibles para crear una página
+          receptiva.
+        </p>
+      </section>
+
+      <section class="main-section" id="flex-direction">
+        <header>flex-direction</header>
+        <p>
+          la propiedad flex-direction para hacer una fila o columna
+        </p>
+        <p>
+          Agregar <code>display: flex;</code> a un elemento lo convierte en un
+          contenedor flexible. Esto hace posible alinear cualquier elemento
+          secundario de ese elemento en filas o columnas. Para ello, agregue la
+          propiedad <code>flex-direction</code> al elemento principal y
+          configúrelo en <code>row</code> (fila) o
+          <code>column</code> (columna). Crear una fila alineará a los hijos
+          horizontalmente, y crear una columna alineará a los hijos
+          verticalmente.
+        </p>
+        <p>
+          Otras opciones para <code>flex-direction</code> son
+          <code>row-reverse</code> (reverso de fila) y
+          <code>column-reverse</code> (reverso de columna).
+        </p>
+        <p>
+          Nota: El valor predeterminado para la propiedad
+          <code>flex-direction</code> es <code>row</code>.
+        </p>
+      </section>
+
+      <section class="main-section" id="justify-content">
+        <header>justify-content</header>
+        <p>
+          Alinear elementos usando la propiedad justify-content
+        </p>
+        <p>
+          A veces, los elementos flexibles dentro de un contenedor flexible no
+          llenan todo el espacio en el contenedor. Es común querer decirle a CSS
+          cómo alinear y espaciar los elementos flexibles de cierta manera.
+          Afortunadamente, la propiedad <code>justify-content</code> tiene
+          varias opciones para hacer esto. Pero primero.
+        </p>
+        <p>
+          Establecer un contenedor flexible como una fila coloca los elementos
+          flexibles uno al lado del otro de izquierda a derecha. Un contenedor
+          flexible configurado como una columna coloca los elementos flexibles
+          en una pila vertical de arriba a abajo. Para cada uno, la dirección en
+          la que se disponen los elementos flexibles se denomina eje
+          principal(main axis). Para una fila, esta es una línea horizontal que
+          corta cada elemento. Y para una columna, el eje principal es una línea
+          vertical a través de los elementos.
+        </p>
+        <p>
+          Hay varias opciones sobre cómo espaciar los elementos flexibles a lo
+          largo de la línea que es el eje principal. Uno de los más utilizados
+          es el justify-content: center; que alinea todos los elementos
+          flexibles al centro dentro del contenedor flexible. Otras opciones
+          incluyen:
+        </p>
+        <ul>
+          <li>
+            <code>flex-start:</code> alinea los elementos al inicio del
+            contenedor flexible. Por una fila, esto empuja los artículos a la
+            izquierda del contenedor. Para una columna, esto empuja los
+            elementos a la parte superior del contenedor. Esta es la alineación
+            predeterminada si no se especifica ninguna.
+          </li>
+          <li>
+            <code>flex-end:</code> alinea los elementos al final del contenedor
+            flexible. Por una fila, esto empuja los artículos a la derecha del
+            contenedor. Para una columna, esto empuja los artículos al fondo del
+            contenedor.
+          </li>
+          <li>
+            <code>space-between:</code> alinea los elementos al centro del eje
+            principal, con espacio adicional colocado entre los elementos. El
+            primer y el último artículo se empujan hasta el borde del contenedor
+            flexible. Por ejemplo, en una fila, el primer elemento está contra
+            el lado izquierdo del contenedor, el último elemento está contra el
+            lado derecho del contenedor, luego el espacio restante se distribuye
+            uniformemente entre los otros elementos.
+          </li>
+          <li>
+            <code>space-around:</code> similar a space-between pero el primer y
+            el último elemento no están bloqueados en los bordes del contenedor,
+            el espacio se distribuye alrededor de todos los elementos con un
+            espacio medio en cada extremo del contenedor flexible.
+          </li>
+          <li>
+            <code>space-evenly:</code> Distribuye el espacio de manera uniforme
+            entre los elementos flexibles con un espacio completo en cada
+            extremo del contenedor flexible
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="align-items">
+        <header>align-items</header>
+        <p>Alinear elementos con la propiedad <code>align-items</code></p>
+        <p>
+          La propiedad <code>align-items</code> es similar a
+          <code>justify-content</code>. Recuerde que la propiedad
+          <code>justify-content</code> alineó los elementos flexibles a lo largo
+          del eje principal. Para las filas, el eje principal es una línea
+          horizontal y para las columnas es una línea vertical.
+        </p>
+        <p>
+          Los contenedores flexibles también tienen un eje transversal
+          (cross-axis) que es opuesto al eje principal. Para las filas, el eje
+          transversal es vertical y para las columnas, el eje transversal es
+          horizontal.
+        </p>
+        <p>
+          CSS ofrece la propiedad <code>align-items</code> para alinear
+          elementos flexibles a lo largo del eje transversal. Para una fila, le
+          dice a CSS cómo empujar los elementos en toda la fila hacia arriba o
+          hacia abajo dentro del contenedor. Y para una columna, cómo empujar
+          todos los elementos hacia la izquierda o hacia la derecha dentro del
+          contenedor.
+        </p>
+        <p>
+          Los diferentes valores disponibles para
+          <code>align-items</code> incluyen:
+        </p>
+        <ul>
+          <li>
+            flex-start: alinea los elementos al inicio del contenedor flexible.
+            Para las filas, esto alinea los elementos a la parte superior del
+            contenedor. Para las columnas, esto alinea los elementos a la
+            izquierda del contenedor.
+          </li>
+          <li>
+            <code>flex-end:</code> alinea los elementos al final del contenedor
+            flexible. Para las filas, esto alinea los elementos al fondo del
+            contenedor. Para las columnas, esto alinea los elementos a la
+            derecha del contenedor.
+          </li>
+          <li>
+            <code>center:</code> alinear elementos al centro. Para las filas,
+            esto alinea verticalmente los elementos (igual espacio encima y
+            debajo de los elementos). Para las columnas, esto los alinea
+            horizontalmente (igual espacio a la izquierda y a la derecha de los
+            elementos).
+          </li>
+          <li>
+            <code>stretch:</code> estirar los artículos para llenar el
+            contenedor flexible. Por ejemplo, los elementos de las filas se
+            estiran para llenar el contenedor flexible de arriba a abajo. Este
+            es el valor predeterminado de <code>align-items</code> si no se
+            especifica ningún valor.
+          </li>
+          <li>
+            <code>baseline:</code> alinear elementos a sus líneas de base. La
+            línea base es un concepto de texto, piense en ella como la línea en
+            la que se ubican las letras.
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="flex-wrap">
+        <header>flex-wrap</header>
+        <p>flex-wrap para envolver una fila o columna</p>
+
+        <p>
+          CSS flexbox tiene una función para dividir un elemento flexible en
+          varias filas (o columnas). Por defecto, un contenedor flexible
+          encajará todos los elementos flexibles juntos. Por ejemplo, una fila
+          estará en una sola línea. Sin embargo, al usar la propiedad
+          <code>flex-wrap</code> , le dice a CSS que envuelva los elementos.
+          Esto significa que los elementos adicionales se mueven a una nueva
+          fila o columna. El punto de ruptura de donde ocurre la envoltura
+          depende del tamaño de los artículos y del tamaño del contenedor.
+        </p>
+        <p>CSS también tiene opciones para la dirección de la envoltura:</p>
+        <ul>
+          <li>
+            <code>nowrap</code> : esta es la configuración predeterminada y no
+            envuelve los elementos.
+          </li>
+          <li>
+            <code>wrap</code> : envuelve los elementos de izquierda a derecha si
+            están en una fila, o de arriba a abajo si están en una columna.
+          </li>
+          <li>
+            <code>wrap-reverse</code> : envuelve los elementos de abajo a arriba
+            si están en una fila, o de derecha a izquierda si están en una
+            columna.
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="flex-shrink">
+        <header>flex-shrink</header>
+        <p>Use la propiedad <code>flex-shrink</code> para reducir elementos</p>
+        <p>
+          Hasta ahora, todas las propiedades de los desafíos se aplican al
+          contenedor de flexión (el elemento principal de los elementos de
+          flexión). Sin embargo, hay varias propiedades útiles para los
+          elementos flexibles.
+        </p>
+        <p>
+          La primera es la propiedad de
+          <code>flex-shrink</code> . Cuando se usa, permite que un elemento se
+          encoja si el contenedor flexible es demasiado pequeño. Los elementos
+          se reducen cuando el ancho del contenedor principal es menor que el
+          ancho combinado de todos los elementos flexibles dentro de él.
+        </p>
+        <p>
+          La propiedad <code>flex-shrink</code> toma números como valores.
+          Cuanto mayor sea el número, más se reducirá en comparación con los
+          otros elementos del contenedor. Por ejemplo, si un elemento tiene un
+          valor de <code>flex-shrink</code> de 1 y el otro tiene un valor de
+          <code>flex-shrink</code> de 3, el que tiene el valor de 3 se contraerá
+          tres veces más que el otro.
+        </p>
+      </section>
+
+      <section class="main-section" id="flex-grow">
+        <header>flex-grow</header>
+        <p>Use la propiedad flex-grow para expandir elementos pasados</p>
+        <p>
+          Lo opuesto a <code>flex-shrink</code> es la propiedad de
+          <code>flex-grow</code>. Recuerde que <code>flex-shrink</code> controla
+          el tamaño de los elementos cuando el contenedor se reduce. La
+          propiedad <code>flex-grow</code> controla el tamaño de los elementos
+          cuando el contenedor principal se expande.
+        </p>
+        <p>
+          Usando un ejemplo similar del último desafío, si un elemento tiene un
+          valor de <code>flex-grow</code> de 1 y el otro tiene un valor de
+          <code>flex-grow</code> de 3, el valor de 3 crecerá tres veces más que
+          el otro.
+        </p>
+      </section>
+
+      <section class="main-section" id="flex-basis">
+        <header>flex-basis</header>
+        <p>
+          Utilice la propiedad de <code>flex-basis</code> para establecer el
+          tamaño inicial
+        </p>
+        <p>
+          La propiedad de <code>flex-basis</code> especifica el tamaño inicial
+          del elemento antes de que CSS realice ajustes con
+          <code>flex-shrink</code> o <code>flex-grow</code>.
+        </p>
+        <p>
+          Las unidades utilizadas por la propiedad de
+          <code>flex-basis</code> son las mismas que otras propiedades de tamaño
+          ( <code>px</code> , <code>em</code> , <code>%</code> , etc.). El valor
+          <code>auto</code> dimensiona los elementos en función del contenido.
+        </p>
+      </section>
+
+      <section class="main-section" id="flex">
+        <header>flex</header>
+        <p>
+          Hay un acceso directo disponible para establecer varias propiedades de
+          flexión a la vez. Las propiedades <code>flex-grow</code> ,
+          <code>flex-shrink</code> y <code>flex-basis</code> pueden establecerse
+          mediante el uso de la propiedad <code>flex</code> .
+        </p>
+        <p>
+          Por ejemplo, <code>flex: 1 0 10px;</code> establecerá el elemento para
+          <code>flex-grow: 1;</code> , <code>flex-shrink: 0;</code> , y
+          <code>flex-basis: 10px;</code> .
+        </p>
+        <p>
+          La configuración predeterminada de las propiedades es
+          <code>flex: 0 1 auto;</code> .
+        </p>
+      </section>
+
+      <section class="main-section" id="order">
+        <header>order</header>
+        <p>
+          La propiedad de <code>order</code> se utiliza para indicar a CSS el
+          orden en que aparecen los elementos flexibles en el contenedor
+          flexible. De forma predeterminada, los elementos aparecerán en el
+          mismo orden en que vienen en el código fuente HTML. La propiedad toma
+          números como valores y se pueden usar números negativos.
+        </p>
+      </section>
+
+      <section class="main-section" id="align-self">
+        <header>align-self</header>
+        <p>
+          La propiedad final para los elementos flexibles es
+          <code>align-self</code> . Esta propiedad le permite ajustar la
+          alineación de cada elemento individualmente, en lugar de configurarlos
+          todos a la vez. Esto es útil ya que otras técnicas de ajuste comunes
+          que utilizan las propiedades CSS <code>float</code> ,
+          <code>clear</code> y <code>vertical-align</code> no funcionan en
+          elementos flexibles.
+        </p>
+        <p>
+          <code>align-self</code> acepta los mismos valores que
+          <code>align-items</code> y anulará cualquier valor establecido por la
+          propiedad <code>align-items</code> .
+        </p>
+      </section>
+      <!-- End -->
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
